@@ -1,5 +1,6 @@
-ghtml {
-  font-size: 16px;
+/* Base styles (extra small devices-mobilea) */
+html {
+  font-size: 14px;
 }
 
 body {
@@ -8,10 +9,6 @@ body {
   background-color: gainsboro;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
-}
-
-a {
-  text-decoration: none;
 }
 
 h1,
@@ -23,6 +20,16 @@ h2 {
   font-weight: bold;
   font-style: normal;
   font-size: 2.5rem;
+  margin: 8px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #1d4ed8;
 }
 
 #navbar {
@@ -30,30 +37,36 @@ h2 {
   padding: 8px;
 }
 
+#big-logo {
+  display: none;
+}
+
 #banner {
   width: 100%;
-  height: 200px;
+  height: 120px;
   border: 2px solid goldenrod;
   margin: 2px;
 }
 
+
 #about {
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 500px;
   padding: 8px;
 }
 
 #description {
-  width: 50%;
-  padding-right: 8px;
+  font-size: 1rem;
 }
+
 #team {
-  width: 50%;
+  width: 100%;
 }
 
 #team-image {
-  border-radius: 8px;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -67,17 +80,26 @@ h3 {
   margin-top: 0;
 }
 
+.apply {
+  float: right;
+}
+
 .jobs {
-  max-width: 800px;
+  max-width: 500px;
   padding: 0 8px;
   margin: 0 auto;
 }
 
+#jobs-list {
+  display: block;
+}
+
 #jobs-table {
+  display: none;
   width: 100%;
   /* border: 2px solid gray; */
   /* border-collapse: collapse; */
-  text-align: center;
+  /* text-align: center; */
 }
 
 #jobs-table tr:nth-child(even) {
@@ -98,12 +120,26 @@ h3 {
   /* border-right: 2px solid gray; */
 }
 
-.apply {
-  float: right;
+.job {
+  border: 1px solid goldenrod;
+  border-radius: 5px;
+  margin-top: 8px;
+  padding: 8px;
+}
+
+.job-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222222;
+}
+
+.job-detail {
+  margin-top: 4px;
+  color: #555555;
 }
 
 #application {
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 8px;
 }
@@ -116,9 +152,10 @@ h3 {
   font-weight: 500;
 }
 
-#application-form input,
+.form-group input,
 select,
 textarea {
+  width: 90%;
   padding: 8px;
   font-size: 1rem;
   margin-top: 2px;
@@ -127,7 +164,7 @@ textarea {
 }
 
 .form-group textarea {
-  width: 80%;
+  width: 90%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -151,14 +188,14 @@ textarea {
 }
 
 #footer-links {
-  /* list-style: none;s */
-  /* display: flex; */
-  /* text-align: center; */
+  list-style: none;
+  padding-left: 0px;
+  /* display: flex;
+  text-align: center; */
 }
 
 #footer-links li {
-  display: inline;
-  margin: 8px;
+  margin: 6px 16px;
   /* text-align: center; */
 }
 
@@ -166,4 +203,138 @@ textarea {
   color: gray;
   /* text-align: center; */
   /* margin: 0 auto; */
+}
+
+
+
+/* Small devices (tablets) */
+@media screen and (min-width: 576px) {
+  html {
+    font-size: 18px;
+  }
+
+  #navbar {
+    display: none;
+  }
+
+  #big-logo {
+    display: block;
+    margin: 8px;
+  }
+
+  #banner {
+    height: 220px;
+  }
+
+  h1,
+  h2 {
+    margin: 16px 0;
+  }
+
+
+  .form-group input,
+  select {
+    width: 70%;
+  }
+
+  .form-group textarea {
+    width: 90%;
+  }
+
+  .form-group input[type="submit"] {
+    width: 40%;
+  }
+
+  #footer-links li{
+    display: inline;
+  }
+
+}
+
+/* Medium devices (laptops) */
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+
+
+  #navbar {
+    display: none;
+  }
+
+  #big-logo {
+    display: block;
+    height: 80px;
+  }
+
+  #banner {
+    height: 270px;
+  }
+
+  h1,
+  h2 {
+    margin: 20px 0;
+  }
+
+  #about {
+    max-width: 800px;
+    flex-direction: row;
+  }
+
+  #description {
+    width: 50%;
+    padding-right: 8px;
+    font-size: 1.2rem;
+  }
+
+  #team {
+    width: 50%;
+  }
+
+  #team-image {
+    height: 400px;
+  }
+
+  .jobs {
+    max-width: 800px;
+  }
+
+
+  #jobs-list {
+    display: none;
+  }
+
+  #jobs-table {
+    display: table;
+  }
+
+  #application {
+    max-width: 800px;
+  }
+
+  .form-group input,
+  select {
+    width: auto;
+  }
+
+
+
+
+}
+
+/* Large devices (desktops) */
+@media screen and (min-width: 992px) {
+
+  /* CSS rules */
+  #banner {
+    height: 300px;
+  }
+
+
+
+}
+
+/* Extra large devices (large desktops) */
+@media screen and (min-width: 1200px) {
+  /* CSS rules */
 }
